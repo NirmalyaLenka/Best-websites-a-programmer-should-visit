@@ -980,6 +980,21 @@ When learning CS, there are some useful sites you must know to get always inform
 
 ---
 
+## Repository structure
+
+Key files and folders (not exhaustive):
+
+- `.travis.yml`
+- `CODE_OF_CONDUCT.md`
+- `CONTRIBUTING.md`
+- `LICENSE`
+- `README.md`
+- `_config.yml`
+- `package.json`
+- `pull_request_template.md`
+- `white_listed_sites.txt`
+
+
 ## Maintenance & Audit
 
 - **Audit date:** 10 November 2026
