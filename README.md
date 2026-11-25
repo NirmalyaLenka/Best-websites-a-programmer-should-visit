@@ -995,6 +995,33 @@ Key files and folders (not exhaustive):
 - `white_listed_sites.txt`
 
 
+## Local validation
+
+This repository is a curated Markdown resource list; it does not have an application runtime.
+
+### Check Markdown formatting
+
+Install the Node.js dependencies and run the configured test script:
+
+```sh
+npm install
+npm test
+```
+
+The `test` script in `package.json` runs `awesome-lint`. The dependency is declared as `*`, so the resolved version may change over time; no specific linter version is pinned in this repository.
+
+### Check links
+
+The checked-in `.travis.yml` also runs `awesome_bot` against the README and uses `white_listed_sites.txt` for exceptions. Its command requires Ruby/RubyGems, `awesome_bot`, and a shell with `paste` available:
+
+```sh
+gem install awesome_bot
+awesome_bot README.md --white-list "$(paste -d, -s white_listed_sites.txt)" --allow-ssl --allow-redirect
+```
+
+The CI file is a legacy Travis configuration that specifies Node.js 7 and Ruby 2.2; those pinned versions are obsolete. Treat it as historical guidance rather than evidence of a currently passing CI run. Neither Markdown linting nor a link-check run guarantees that every listed resource remains accurate or available.
+
+
 ## Maintenance & Audit
 
 - **Audit date:** 25 November 2026
